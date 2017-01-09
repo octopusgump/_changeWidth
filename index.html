@@ -585,8 +585,6 @@ PerTouchTracker.prototype.SetObject = function(Object)
 };
 
 $(".pyramid").on("touchstart", function(e){
-    //alert(e.originalEvent.changedTouches[0].pageX);
-    e.originalEvent.preventDefault;
     for(var i = 0; i < e.originalEvent.changedTouches.length; i++)
     {
         TouchArray[e.originalEvent.changedTouches[i]] = new PerTouchTracker(this);
@@ -594,7 +592,7 @@ $(".pyramid").on("touchstart", function(e){
 });
 
 $(".pyramid").on('touchmove', function(e){
-    e.originalEvent.preventDefault;
+    e.originalEvent.preventDefault();
     for(var i = 0; i < e.originalEvent.changedTouches.length; i++)
     {
         var hit = document.elementFromPoint(
@@ -604,7 +602,7 @@ $(".pyramid").on('touchmove', function(e){
 });
 
 $(".pyramid").on('touchend', function(e){
-    e.originalEvent.preventDefault;
+    //e.originalEvent.preventDefault();
     for(var i = 0; i < e.originalEvent.changedTouches.length; i++)
     {
         delete TouchArray[e.originalEvent.changedTouches[i]];
@@ -613,7 +611,7 @@ $(".pyramid").on('touchend', function(e){
 
 //*
 $(".pyramid").on("mouseover", function(){   
-    e.originalEvent.preventDefault;
+
     $(this).toggleClass('change');
     var key_now = parseInt($(this).attr('id').substr(1)); 
     getKeyStatic(key_last, key_now);
