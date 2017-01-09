@@ -1,0 +1,229 @@
+
+@import url('http://fonts.googleapis.com/css?family=Open+Sans');
+body{
+  background: #182B3A;
+  transition: all 2000ms ease;  
+  overflow:hidden;
+}
+/*
+FF9F1C
+*/
+#game{
+    position: absolute;
+    top: -30px; 
+    /* right: 0; */
+    /* bottom: 800px; */
+    left: -34px;
+    margin: auto;
+    /* margin-left: 10px; */
+    /*height: 50px;*/
+    width: 2030px;
+    /*1500/(50+8.5x2)*/
+
+}
+
+.pyramid{
+  content: '';
+  height: 50px;
+  width: 50px;
+  background: #dde345;
+  display: inline-block;
+  transform: rotate(45deg);
+  margin: 8.5px;
+  transition: all 2000ms ease;   
+  cursor: pointer;
+}
+
+.pyramid:before{
+  content: '';
+  height: 50px;
+  width: 30px;
+  background: #314840;
+  position: absolute;
+  top: 15px;
+  left: 50px;
+  transform: skew(0deg, 45deg);
+  transition: all 300ms ease;   
+}
+.pyramid:after{
+  content: '';
+  height: 30px;
+  width: 50px;
+  background: #56a993;
+  position: absolute;
+  top: 50px;
+  left: 15px;
+  transform: skew(45deg, 0deg);
+  transition: all 300ms ease;   
+}
+
+@keyframes hop{
+  from {top:36px;}
+  to {top:20px;}
+}
+.pyramid.change{
+  cursor: pointer;
+  background-color: #fc6b19;
+   margin: -28.5px 44.5px 46.5px -28.5px;
+}
+.pyramid.change:after{
+  left: 35px;
+  top: 50px;
+  height: 70px;
+}
+.pyramid.change:before{
+  left: 50px;
+  top: 35px;
+  width: 70px;
+}
+
+/*Guide*/
+
+.coverBackground{
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+  position:fixed;
+  top: 0;
+  left: 0;
+}
+.coverCell{
+  position: absolute;
+  cursor: pointer;
+  top:-150px;
+  bottom:0;
+  left:0;
+  right: 0;
+  width: 350px;
+  height: 220px;
+  margin: auto;
+  overflow: hidden;
+  text-align: center;
+  background-color: #fc6b19;
+  padding: 20px;
+}
+.coverCell:hover{
+  box-shadow: 0 10px 0px #00466a;
+  border-bottom: 3px solid #00466a;
+  transition: all 0.1s ease-in;
+}
+.coverCell:active{
+  background: #FF5733;
+  box-shadow: 0 4px 1px #00466a;
+  border-bottom: 0px solid #00466a;
+  transition: all 0.1s ease-in;
+
+  transform:translateY(4px);
+  border-bottom-width: 2px;
+  box-shadow: none;
+}
+.coverCell span{
+  font-family: 'Open Sans Bold', sans-serif;
+  font-size: 35px; 
+  color: white; 
+
+}
+.coverCell span:hover{
+  transition: all 0.1s ease-in;
+}
+.coverCell span:active{
+  color: white;
+}
+
+@media (max-width: 1200px) {
+  .pyramid{
+  transition: all 1000ms ease;  
+  background: #A3D4A0;
+  }
+  .pyramid:before{
+  background: #368032;
+  }
+  .pyramid:after{
+  background: #47AA42;
+  }
+    .pyramid.change{
+  background: #457B9D;
+  }
+
+}
+@media (max-width: 900px) {
+  .pyramid{
+  background:#1D3557; 
+  transition: all 2600ms ease;  
+  }
+  .pyramid:before{
+  background: #457B9D;
+  }
+  .pyramid:after{
+  background: #A8DADC;
+  }
+  .pyramid.change{
+  background: #2EC4B6;
+  }
+
+}
+
+@media (max-width: 700px) {
+  .pyramid{
+  background: #E71D36;
+  transition: all 300ms ease;   
+  }
+  .pyramid:before{
+  background: #FF9F1C;
+  }
+  .pyramid:after{
+  background: #F0C808;
+  }
+  .pyramid.change{
+  background: #2EC4B6;
+  }
+}
+
+
+
+/*
+@media (max-height: 750px) {
+  .pyramid{
+  transform: rotate(35deg);
+  }
+}
+@media (max-height: 700px) {
+  .pyramid{
+  transform: rotate(25deg);
+  }
+}
+@media (max-height: 650px) {
+  .pyramid{
+  transform: rotate(15deg);
+  }
+}
+@media (max-height: 600px) {
+  .pyramid{
+  transform: rotate(5deg);
+  }
+}
+@media (max-height: 550px) {
+  .pyramid{
+  transform: rotate(-5deg);
+  }
+}
+@media (max-height: 500px) {
+  .pyramid{
+  transform: rotate(-15deg);
+  }
+}
+@media (max-height: 450px) {
+  .pyramid{
+  transform: rotate(-25deg);
+  }
+}
+@media (max-height: 400px) {
+  .pyramid{
+  transform: rotate(-35deg);
+  }
+}
+@media (max-height: 350px) {
+  .pyramid{
+  transform: rotate(-45deg);
+  }
+}*/
